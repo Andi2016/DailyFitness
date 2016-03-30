@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">DailyFitness</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="button_fitness_main">FITNESS</string>
+    <string name="button_search_main">SEARCH</string>
+    <string name="my_profile">My Profile</string>
+    <string name="health_data">Health Data</string>
+    <string name="fitness_analysis">Fitness Analysis</string>
+    <string name="sign_out">SIGN OUT</string>
+    <string name="title_activity_my_profile">MyProfile</string>
+    <string name="title_activity_search">SearchActivity</string>
+    <string name="action_back">back</string>
+
+</resources>
