@@ -14,5 +14,6 @@
     <string name="title_activity_my_profile">MyProfile</string>
     <string name="title_activity_search">SearchActivity</string>
     <string name="action_back">back</string>
+    <string name="button_location">Location</string>
 
 </resources>
