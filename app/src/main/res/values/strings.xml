@@ -15,5 +15,21 @@
     <string name="title_activity_search">SearchActivity</string>
     <string name="action_back">back</string>
     <string name="button_location">Location</string>
+    <string name="button_near">Near</string>
+    <string name="title_activity_test">test</string>
+    <string name="gymdetail">show more details</string>
+    <string name="title_activity_gym">Gym Information</string>
+    <string name="title_activity_sign_in">SignInActivity</string>
+    <string name="title_activity_sign_up">SignUpActivity</string>
+    <string name="title_activity_db">DBActivity</string>
+    <string name="title_activity_questionaire">QuestionaireActivity</string>
+    <string name="title_activity_reset">ResetActivity</string>
+    <string name="title_activity_reset2">Reset2Activity</string>
+    <string name="title_activity_table_data">TableDataActivity</string>
+    <string name="input_username">Username</string>
+    <string name="button_SignIn">Sign In</string>
+    <string name="input_password">Password</string>
+    <string name="forgetPW">Forget Password?</string>
+    <string name="sign_up">Sign Up</string>
 
 </resources>
