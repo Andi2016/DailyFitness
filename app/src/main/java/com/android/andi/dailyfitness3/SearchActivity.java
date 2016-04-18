@@ -1,10 +1,12 @@
 package com.android.andi.dailyfitness3;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.location.Location;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.TextView;
 
 import com.amap.api.location.AMapLocation;
 import com.amap.api.location.AMapLocationListener;
@@ -19,8 +21,11 @@ import com.amap.api.maps.model.LatLng;
 import com.amap.api.maps.model.Marker;
 import com.amap.api.maps.model.MarkerOptions;
 import com.amap.api.maps.model.MyLocationStyle;
+import com.amap.api.maps.AMap.InfoWindowAdapter;
+import com.amap.api.maps.AMap.OnInfoWindowClickListener;
+import com.amap.api.maps.AMap.OnMarkerClickListener;
 
-public class SearchActivity extends AppCompatActivity implements LocationSource, AMapLocationListener{
+public class SearchActivity extends AppCompatActivity implements LocationSource, AMapLocationListener, OnInfoWindowClickListener, InfoWindowAdapter, OnMarkerClickListener{
 
     MapView mapView;
     AMap aMap;
@@ -47,6 +52,7 @@ public class SearchActivity extends AppCompatActivity implements LocationSource,
         mapView = (MapView) findViewById(R.id.map);
         mapView.onCreate(savedInstanceState);
         showMap();
+
     }
 
     /**
@@ -80,6 +86,8 @@ public class SearchActivity extends AppCompatActivity implements LocationSource,
         aMap.setLocationSource(this);
         aMap.setMyLocationEnabled(true);
 
+
+
         /**
          * insert markers
          */
@@ -105,11 +113,10 @@ public class SearchActivity extends AppCompatActivity implements LocationSource,
                 .icon((BitmapDescriptorFactory.fromResource(R.drawable.ic_menu_send)))
                 .draggable(true));
 
-        /*aMap.setOnMarkerClickListener(this);
+        aMap.setOnMarkerClickListener(this);
         aMap.setOnInfoWindowClickListener(this);
-        aMap.setInfoWindowAdapter(this);*/
-
-        Gym1.showInfoWindow();
+        aMap.setInfoWindowAdapter(this);
+        //Gym1.showInfoWindow();
        
 
     }
@@ -205,6 +212,30 @@ public class SearchActivity extends AppCompatActivity implements LocationSource,
     @Override
     public void onProviderDisabled(String provider) {
 
+    }
+
+    @Override
+    public View getInfoWindow(Marker marker) {
+        View view = getLayoutInflater().inflate(R.layout.marker_infowindow, null);
+        TextView title = ((TextView) view.findViewById(R.id.infowindow_title));
+        title.setText(marker.getTitle());
+
+        return view;
+    }
+
+    @Override
+    public View getInfoContents(Marker marker) {
+        return null;
+    }
+
+    @Override
+    public void onInfoWindowClick(Marker marker) {
+        startActivity(new Intent(SearchActivity.this, GymActivity.class));
+    }
+
+    @Override
+    public boolean onMarkerClick(Marker marker) {
+        return false;
     }
 }
 

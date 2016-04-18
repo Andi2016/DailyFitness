@@ -1,6 +1,8 @@
 package com.android.andi.dailyfitness3;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -98,6 +100,12 @@ public class FitnessActivity extends AppCompatActivity
         } else if (id == R.id.nav_slideshow) {
 
         } else if (id == R.id.nav_manage) {
+            SharedPreferences userinfo = getSharedPreferences("USER_STATUS", Context.MODE_PRIVATE);
+            SharedPreferences.Editor editor = userinfo.edit();
+            editor.putInt("status", 0);
+            editor.commit();
+            startActivity(new Intent(FitnessActivity.this, SignInActivity.class));
+            finish();
 
         } else if (id == R.id.nav_share) {
 
